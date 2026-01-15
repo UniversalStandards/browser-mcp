@@ -66,7 +66,7 @@ export default function Workflows() {
         <div className="grid grid-cols-2">
           {workflows.map((workflow) => (
             <div key={workflow.id} className="card">
-              <div style={{ display: 'flex', justifyContent: 'between', alignItems: 'start', marginBottom: '1rem' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'start', marginBottom: '1rem' }}>
                 <div style={{ flex: 1 }}>
                   <h3 style={{ fontSize: '1.125rem', fontWeight: 600, marginBottom: '0.5rem' }}>{workflow.name}</h3>
                   <p style={{ color: 'var(--text-secondary)', fontSize: '0.875rem' }}>{workflow.description}</p>

@@ -113,7 +113,12 @@ export default function Tasks() {
               </label>
               <select
                 value={newTask.priority}
-                onChange={(e) => setNewTask({ ...newTask, priority: e.target.value as any })}
+                onChange={(e) => {
+                  const value = e.target.value;
+                  if (value === 'low' || value === 'medium' || value === 'high' || value === 'urgent') {
+                    setNewTask({ ...newTask, priority: value });
+                  }
+                }}
                 style={{
                   padding: '0.5rem',
                   border: '1px solid var(--border)',

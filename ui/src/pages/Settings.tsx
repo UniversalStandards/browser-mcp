@@ -26,7 +26,12 @@ export default function Settings() {
             <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 500 }}>Theme</label>
             <select
               value={settings.theme}
-              onChange={(e) => updateSettings({ theme: e.target.value as any })}
+              onChange={(e) => {
+                const value = e.target.value;
+                if (value === 'light' || value === 'dark' || value === 'auto') {
+                  updateSettings({ theme: value });
+                }
+              }}
               style={{ padding: '0.5rem', border: '1px solid var(--border)', borderRadius: '0.375rem', backgroundColor: 'var(--background)', color: 'var(--text-primary)', width: '200px' }}
             >
               <option value="light">Light</option>
