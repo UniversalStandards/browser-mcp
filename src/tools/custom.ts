@@ -15,9 +15,13 @@ export const getConsoleLogs: Tool = {
       "browser_get_console_logs",
       {},
     );
-    const text: string = consoleLogs
-      .map((log) => JSON.stringify(log))
-      .join("\n");
+    const text: string = Array.isArray(consoleLogs)
+      ? consoleLogs
+          .map((log: { type?: string; level?: string; message: string }) => 
+            JSON.stringify(log)
+          )
+          .join("\n")
+      : String(consoleLogs);
     return {
       content: [{ type: "text", text }],
     };

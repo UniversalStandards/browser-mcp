@@ -9,11 +9,12 @@
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
     "outDir": "dist",
-    "rootDir": "src",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@repo/*": ["./stubs/@repo/*"],
+      "@r2r/*": ["./stubs/@r2r/*"]
     }
   },
-  "include": ["src/**/*.ts"],
+  "include": ["src/**/*.ts", "stubs/**/*.ts"],
   "exclude": ["node_modules"]
 }
